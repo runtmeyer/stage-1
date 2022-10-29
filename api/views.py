@@ -7,4 +7,4 @@ from .serializers import ProfileSerializer
 def profile_list(request):
     info = Profile.objects.all()
     serializer =  ProfileSerializer(info, many=True)
-    return JsonResponse(serializer.data, safe=False )  
+    return JsonResponse(serializer.data[0], safe=False )  
